@@ -6,6 +6,8 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.study.androidsecurity.R;
+import com.study.androidsecurity.util.MyUtils;
+import com.study.androidsecurity.util.VersionUpdateUtils;
 
 import java.security.PrivateKey;
 
@@ -21,7 +23,14 @@ public class WelcomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.welcome_page);
-
+        mVersion = MyUtils.getVersion(getApplicationContext());
+        initView();
+        final VersionUpdateUtils updateUtils = new VersionUpdateUtils(mVersion, WelcomeActivity.this);
+        new Thread(){
+            public void run() {
+                updateUtils.getCloudVersion();
+            }
+        }.start();
     }
 
     private void initView() {
