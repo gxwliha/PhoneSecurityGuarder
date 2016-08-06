@@ -101,7 +101,7 @@ public class VersionUpdateUtils {
 
     public void getCloudVersion() {
         try {
-            HttpURLConnection connection = null;
+            HttpURLConnection connection;
             URL url = new URL("http://202.113.76.210/updateinfo.json");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");

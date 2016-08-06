@@ -20,7 +20,7 @@ public class MyUtils {
         try {
             PackageInfo packageInfo = manager.getPackageInfo(context.getPackageName(), 0);
             return packageInfo.versionName;
-        } catch (Exception e) {
+        } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             return "";
         }
