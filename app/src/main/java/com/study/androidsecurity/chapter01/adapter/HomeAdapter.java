@@ -7,7 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.administrator.security.R;
+import com.study.androidsecurity.R;
+
 
 /**
  * GridView's Adapter for HomeActivity.

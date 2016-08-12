@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/launch_bg"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.WelcomeActivity">
+    tools:context=".chapter01.activity.WelcomeActivity">
 
     <ProgressBar
         android:id="@+id/progressBar1"

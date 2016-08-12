@@ -6,8 +6,8 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.study.androidsecurity.R;
-import com.study.androidsecurity.util.MyUtils;
-import com.study.androidsecurity.util.VersionUpdateUtils;
+import com.study.androidsecurity.chapter01.util.MyUtils;
+import com.study.androidsecurity.chapter01.util.VersionUpdateUtils;
 
 /**
  * Created by 46358_000 on 2016/8/4 0004.
@@ -34,5 +34,7 @@ public class WelcomeActivity extends Activity {
     private void initView() {
         mVersionTV = (TextView) findViewById(R.id.current_version);
         mVersionTV.setText("版本号 "+mVersion);
+
+        //git
     }
 }

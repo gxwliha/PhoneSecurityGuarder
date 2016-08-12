@@ -4,14 +4,27 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.CursorJoiner;
 import android.os.Handler;
 import android.widget.Toast;
 
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.study.androidsecurity.R;
-import com.study.androidsecurity.chapter01.activity.entity.VersionEntity;
+import com.study.androidsecurity.chapter01.activity.HomeActivity;
+import com.study.androidsecurity.chapter01.entity.VersionEntity;
 
+
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,17 +64,17 @@ public class VersionUpdateUtils {
                 case MESSAGE_SHOEW_DIALOG:
                     showUpdateDialog(versionEntity);
                     break;
-//                case MESSAGE_ENTERHOME:
-//                    Intent intent = new Intent(context, HomeActivity.class);
-//                    context.startActivity(intent);
-//                    break;
+                case MESSAGE_ENTERHOME:
+                    Intent intent = new Intent(context, HomeActivity.class);
+                    context.startActivity(intent);
+                    break;
             }
         }
     };
 
 
     private void showUpdateDialog(final VersionEntity versionEntity) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MyApplication.getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("检测到新版本：" + versionEntity.versioncode);
         builder.setMessage(versionEntity.description);
         builder.setCancelable(false);
@@ -99,34 +112,51 @@ public class VersionUpdateUtils {
 
     public void getCloudVersion() {
         try {
-            HttpURLConnection connection;
-            URL url = new URL("http://202.113.76.210/updateinfo.json");
-            connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
-            connection.setConnectTimeout(8000);
-            connection.setReadTimeout(8000);
-            InputStream inputStream=connection.getInputStream();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            StringBuilder response = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
+            HttpClient client = new DefaultHttpClient();
+            HttpConnectionParams.setConnectionTimeout(client.getParams(), 5000);
+            HttpConnectionParams.setSoTimeout(client.getParams(), 5000);
+            HttpGet httpGet = new HttpGet("http://10.0.2.2:80/updateinfo.json");
+            HttpResponse execute = client.execute(httpGet);
+            if (execute.getStatusLine().getStatusCode() == 200) {
+                HttpEntity entity = execute.getEntity();
+                String result = EntityUtils.toString(entity, "gbk");
+                JSONObject jsonObject = new JSONObject(result);
+                versionEntity = new VersionEntity();
+                String code = jsonObject.getString("code");
+                versionEntity.versioncode = code;
+                String des = jsonObject.getString("des");
+                versionEntity.description = des;
+                String apkurl = jsonObject.getString("apkurl");
+                versionEntity.apkurl = apkurl;
 
+
+//            HttpURLConnection connection;
+//            URL url = new URL("http://10.0.2.2/updateinfo.json");
+//            connection = (HttpURLConnection) url.openConnection();
+//            connection.setRequestMethod("GET");
+//            connection.setConnectTimeout(8000);
+//            connection.setReadTimeout(8000);
+//            InputStream inputStream=connection.getInputStream();
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+//            StringBuilder response = new StringBuilder();
+//            String line;
+//            while ((line = reader.readLine()) != null) {
+//                response.append(line);
+//
+//            }
+//
+//            String result = response.toString();
+
+                if (!mVersion.equals(versionEntity.versioncode)) {
+                    handler.sendEmptyMessage(MESSAGE_SHOEW_DIALOG);
+
+                }
             }
 
-            String result = response.toString();
-            JSONObject jsonObject = new JSONObject(result);
-            versionEntity = new VersionEntity();
-            String code = jsonObject.getString("code");
-            versionEntity.versioncode=code;
-            String des = jsonObject.getString("des");
-            versionEntity.description = des;
-            String apkurl = jsonObject.getString("apkurl");
-            versionEntity.apkurl = apkurl;
-            if (!mVersion.equals(versionEntity.versioncode)) {
-                handler.sendEmptyMessage(MESSAGE_SHOEW_DIALOG);
+        } catch (ClientProtocolException e) {
+            handler.sendEmptyMessage(MESSAGE_NET_EEOR);
+            e.printStackTrace();
 
-            }
         } catch (IOException e) {
             handler.sendEmptyMessage(MESSAGE_IO_EEOR);
             e.printStackTrace();
@@ -138,7 +168,7 @@ public class VersionUpdateUtils {
 
 
     private void initProgressDialog() {
-        mprogressDialog = new ProgressDialog(MyApplication.getContext());
+        mprogressDialog = new ProgressDialog(context);
         mprogressDialog.setMessage("准备下载...");
         mprogressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         mprogressDialog.show();
@@ -147,7 +177,7 @@ public class VersionUpdateUtils {
 
     protected void downloadNewApk(String apkurl) {
         DownLoadUtils downLoadUtils = new DownLoadUtils();
-        downLoadUtils.downapk(apkurl, "/mnt.sdcard/mobilesafe2.0.apk", new DownLoadUtils.MyCallBack() {
+        downLoadUtils.downapk(apkurl, "/mnt/sdcard/mobilesafe2.0.apk", new DownLoadUtils.MyCallBack() {
             @Override
             public void onSuccess(ResponseInfo<File> arg0) {
                 mprogressDialog.dismiss();
