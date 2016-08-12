@@ -205,3 +205,4 @@ public class VersionUpdateUtils {
         handler.sendEmptyMessageDelayed(MESSAGE_ENTERHOME, 2000);
     }
 }
+//test
