@@ -1,0 +1,21 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 216 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 193562 0 0
+ciMethod java/lang/Object getClass ()Ljava/lang/Class; 3073 1 384 0 -1
+ciMethod java/lang/Object equals (Ljava/lang/Object;)Z 4097 1 4994 0 -1
+ciMethod java/util/List iterator ()Ljava/util/Iterator; 0 0 1 0 -1
+ciMethod java/util/AbstractList <init> ()V 705 1 29603 0 0
+ciMethod java/util/AbstractCollection <init> ()V 281 1 35686 0 0
+ciMethod java/util/ArrayList <init> ()V 153 1 13329 0 64
+ciMethod java/util/ArrayList elementData (I)Ljava/lang/Object; 1921 1 170089 0 0
+ciMethod java/util/ArrayList get (I)Ljava/lang/Object; 1897 1 162291 0 128
+ciMethod java/util/ArrayList add (Ljava/lang/Object;)Z 641 1 45270 0 -1
+ciMethod java/util/ArrayList rangeCheck (I)V 1897 1 169928 0 0
+ciMethod java/util/ArrayList iterator ()Ljava/util/Iterator; 3305 1 23482 0 -1
+ciMethod java/util/Collections unmodifiableList (Ljava/util/List;)Ljava/util/List; 4097 1 2905 0 -1
+ciMethodData java/lang/Object <init> ()V 2 193594 orig 264 8 193 193 107 0 0 0 0 128 4 203 20 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 209 145 23 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 3 0 1 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 data 0 oops 0
+ciMethod java/util/Iterator hasNext ()Z 0 0 1 0 -1
+ciMethod java/util/Iterator next ()Ljava/lang/Object; 0 0 1 0 -1
+ciMethodData java/util/ArrayList get (I)Ljava/lang/Object; 2 162888 orig 264 8 193 193 107 0 0 0 0 56 216 215 20 0 0 0 0 144 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 237 0 0 0 217 218 19 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 6 0 2 0 0 0 64 0 0 0 255 255 255 255 2 0 2 0 0 0 0 0 data 8 0x20002 0x27b7d 0x70005 0x0 0x17c27d40 0x27bd5 0x0 0x0 oops 1

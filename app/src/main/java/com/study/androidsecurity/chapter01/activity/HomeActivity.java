@@ -23,6 +23,12 @@ import android.widget.Toast;
 //import com.example.administrator.reciever.MyDeviceAdminReceiver;
 import com.study.androidsecurity.R;
 import com.study.androidsecurity.chapter01.adapter.HomeAdapter;
+import com.study.androidsecurity.chapter03.activity.SecurityPhoneActivity;
+import com.study.androidsecurity.chapter04.Activity.SofewareManager;
+import com.study.androidsecurity.chapter05.activity.VirusScanActivity;
+import com.study.androidsecurity.chapter06.activity.CacheClearListActivity;
+import com.study.androidsecurity.chapter06.activity.CleanCacheActivity;
+import com.study.androidsecurity.chapter06.adapter.CacheCleanAdapter;
 
 public class HomeActivity extends Activity {
 
@@ -64,16 +70,16 @@ public class HomeActivity extends Activity {
 //                        }
                         break;
                     case 1://通讯卫士
-                       // startActivity(SecurityPhone.class);
+                        startActivity(SecurityPhoneActivity.class);
                         break;
                     case 2://软件管家
-                       // startActivity(SofewareManager.class);
+                        startActivity(SofewareManager.class);
                         break;
                     case 3://病毒查杀
-                       // startActivity(AntiVirus.class);
+                        startActivity(VirusScanActivity.class);
                         break;
                     case 4://清理缓存
-                       // startActivity(ClearCache.class);
+                        startActivity(CacheClearListActivity.class);
                         break;
                     case 5://进程管理
                         //startActivity(ProcessManager.class);

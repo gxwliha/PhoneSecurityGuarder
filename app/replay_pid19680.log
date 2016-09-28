@@ -1,0 +1,46 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 307 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 235212 0 0
+ciMethod java/lang/Object getClass ()Ljava/lang/Class; 2049 1 256 0 -1
+ciMethod java/lang/System arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V 7169 1 896 0 -1
+ciMethod java/lang/RuntimeException <init> (Ljava/lang/String;)V 0 0 1 0 -1
+ciMethod java/util/Collection iterator ()Ljava/util/Iterator; 0 0 1 0 -1
+ciMethod java/util/List iterator ()Ljava/util/Iterator; 0 0 1 0 -1
+ciMethod java/util/AbstractList <init> ()V 481 1 35015 0 32
+ciMethod java/util/AbstractCollection <init> ()V 281 1 43369 0 32
+ciMethod java/util/ArrayList <init> ()V 161 1 18484 0 64
+ciMethod java/util/ArrayList ensureCapacityInternal (I)V 641 1 71266 0 0
+ciMethod java/util/ArrayList ensureExplicitCapacity (I)V 641 1 74180 0 544
+ciMethod java/util/ArrayList grow (I)V 89 1 6156 0 512
+ciMethod java/util/ArrayList hugeCapacity (I)I 0 0 1 0 -1
+ciMethod java/util/ArrayList elementData (I)Ljava/lang/Object; 2081 1 242631 0 0
+ciMethod java/util/ArrayList get (I)Ljava/lang/Object; 2073 1 233359 0 128
+ciMethod java/util/ArrayList add (Ljava/lang/Object;)Z 641 1 70086 0 736
+ciMethod java/util/ArrayList rangeCheck (I)V 2081 1 242466 0 0
+ciMethod java/util/ArrayList iterator ()Ljava/util/Iterator; 3121 1 30035 0 192
+ciMethod java/util/ArrayList access$100 (Ljava/util/ArrayList;)I 1553 1 194 0 0
+ciMethod java/util/Collections unmodifiableList (Ljava/util/List;)Ljava/util/List; 4097 1 5017 0 0
+ciMethod java/util/Collections$UnmodifiableRandomAccessList <init> (Ljava/util/List;)V 4097 1 5021 0 0
+ciMethod java/util/Collections$UnmodifiableList <init> (Ljava/util/List;)V 4097 1 5022 0 0
+ciMethod java/util/Collections$UnmodifiableCollection <init> (Ljava/util/Collection;)V 4097 1 5251 0 0
+ciMethod java/util/Collections$UnmodifiableCollection iterator ()Ljava/util/Iterator; 4097 1 5668 0 640
+ciMethod java/lang/Math max (II)I 225 1 17612 0 -1
+ciMethod java/lang/Math min (II)I 3081 1 23360 0 -1
+ciMethod java/util/Arrays copyOf ([Ljava/lang/Object;I)[Ljava/lang/Object; 2593 1 12977 0 0
+ciMethod java/util/Arrays copyOf ([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object; 2393 1 5453 0 -1
+ciMethod java/util/Arrays copyOf ([JI)[J 9 1 23 0 0
+ciMethod java/util/TreeMap getFirstEntry ()Ljava/util/TreeMap$Entry; 4097 2505 866 0 0
+ciMethod java/util/TreeMap successor (Ljava/util/TreeMap$Entry;)Ljava/util/TreeMap$Entry; 4097 729 1911 0 0
+ciMethod java/util/TreeMap access$100 (Ljava/util/TreeMap;)I 1225 1 153 0 0
+ciMethodData java/lang/Object <init> ()V 2 235212 orig 264 8 193 193 107 0 0 0 0 128 4 103 20 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 97 166 28 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 3 0 1 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 data 0 oops 0
+ciMethod java/util/Iterator hasNext ()Z 0 0 1 0 -1
+ciMethod java/util/Iterator next ()Ljava/lang/Object; 0 0 1 0 -1
+ciMethod java/util/BitSet wordIndex (I)I 2057 1 38000 0 0
+ciMethod java/util/BitSet checkInvariants ()V 2057 1 12544 0 32
+ciMethod java/util/BitSet ensureCapacity (I)V 145 1 3472 0 0
+ciMethod java/util/BitSet expandTo (I)V 3929 1 8419 0 160
+ciMethod java/util/BitSet set (I)V 2457 1 6737 0 320
+ciMethod java/util/BitSet get (I)Z 1281 1 6678 0 160
+ciMethodData java/util/ArrayList add (Ljava/lang/Object;)Z 2 70543 orig 264 8 193 193 107 0 0 0 0 144 217 115 20 0 0 0 0 144 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 80 0 0 0 249 153 8 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 15 0 2 0 0 0 64 0 0 0 255 255 255 255 2 0 7 0 0 0 0 0 data 8 0x70002 0x1138b 0x1a0104 0x0 0x174eb7e0 0x14a 0x17a6b380 0xf oops 2

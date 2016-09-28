@@ -115,7 +115,8 @@ public class VersionUpdateUtils {
             HttpClient client = new DefaultHttpClient();
             HttpConnectionParams.setConnectionTimeout(client.getParams(), 5000);
             HttpConnectionParams.setSoTimeout(client.getParams(), 5000);
-            HttpGet httpGet = new HttpGet("http://10.0.2.2:80/updateinfo.json");
+            HttpGet httpGet = new HttpGet("http://10.0.2.2:9999/updateinfo.json");
+           // HttpGet httpGet = new HttpGet("http://192.168.191.1:9999/updateinfo.json");
             HttpResponse execute = client.execute(httpGet);
             if (execute.getStatusLine().getStatusCode() == 200) {
                 HttpEntity entity = execute.getEntity();

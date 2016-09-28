@@ -2,7 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.study.androidsecurity">
 
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--chapter03 添加权限-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+
+
+    <!--<instrumentation-->
+        <!--android:name="android.test.InstrumentationTestRunner"-->
+        <!--android:targetPackage="com.study.androidsecurity"/>-->
+
     <application
+
 
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +27,19 @@
         android:supportsRtl="true"
 
         android:theme="@style/AppTheme">
+        <!--<uses-library android:name="android.test.runner"/>-->
+        <receiver android:name=".chapter03.activity.InterceptSmsReceive">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <!--拦截黑名单电话-->
+        <receiver android:name=".chapter03.activity.InterceptCallReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
 
 
         <activity android:name=".chapter01.activity.WelcomeActivity">
@@ -22,8 +52,32 @@
         <activity android:name=".chapter01.activity.HomeActivity">
 
         </activity>
+        <activity android:name=".chapter06.activity.CacheClearListActivity">
+
+        </activity>
+        <activity android:name=".chapter06.activity.CleanCacheActivity">
+
+        </activity>
+        <activity android:name=".chapter04.Activity.SofewareManager">
+
+        </activity>
+        <activity android:name=".chapter05.activity.VirusScanActivity">
+
+        </activity>
+        <activity android:name=".chapter05.activity.VirusScanSpeedActivity">
+
+        </activity>
+        <activity android:name=".chapter03.activity.SecurityPhoneActivity">
+
+        </activity>
+        <activity android:name=".chapter03.activity.AddBlackNumberActivity">
+
+        </activity>
+        <activity android:name=".chapter03.activity.ContactSelectActivity">
+
+        </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
 
 </manifest>
