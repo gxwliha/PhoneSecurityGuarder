@@ -81,6 +81,7 @@ public class ContactSelectActivity extends Activity implements View.OnClickListe
             case R.id.imgv_leftbtn:
                 finish();
                 break;
+            //lalalala
 
         }
     }
